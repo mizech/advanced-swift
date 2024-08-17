@@ -1,18 +1,31 @@
-//
-//  GridSectionView.swift
-//  LittleLemon
-//
-//  Created by Michael on 17.08.24.
-//
-
 import SwiftUI
 
 struct GridSectionView: View {
+    var title: String
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        let layout = [
+            GridItem(.flexible(minimum: 100)),
+            GridItem(.flexible(minimum: 100)),
+            GridItem(.flexible(minimum: 100)),
+        ]
+        
+        VStack(alignment: .leading) {
+            Text(title).font(.title)
+            LazyVGrid(columns: layout, content: {
+                ForEach(0..<12) { num in
+                    VStack {
+                        Rectangle()
+                            .frame(height: 70)
+                        Text("Number \(num)")
+                    }
+                    
+                }
+            })
+        }
     }
 }
 
 #Preview {
-    GridSectionView()
+    GridSectionView(title: "Some title here ...")
 }

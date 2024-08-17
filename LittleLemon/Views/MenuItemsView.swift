@@ -2,13 +2,15 @@ import SwiftUI
 
 struct MenuItemsView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack {
+            ScrollView {
+                GridSectionView(title: "Food")
+                GridSectionView(title: "Drink")
+                GridSectionView(title: "Dessert")
+            }
+            .padding()
+            .navigationTitle("Menu")
         }
-        .padding()
     }
 }
 
