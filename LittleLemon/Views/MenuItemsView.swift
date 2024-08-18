@@ -1,21 +1,25 @@
 import SwiftUI
 
+struct Options {
+    var isFoodSelected = true
+    var isDrinkSelected = true
+    var isDessertSelected = true
+}
+
 struct MenuItemsView: View {
     @State private var isOptionsViewShown = false
-    @State private var isFoodSelected = true
-    @State private var isDrinkSelected = true
-    @State private var isDessertSelected = true
-    
+    @State private var options = Options()
+   
     var body: some View {
         NavigationStack {
             ScrollView {
-                if isFoodSelected == true {
+                if options.isFoodSelected == true {
                     GridSectionView(title: "Food")
                 }
-                if isDrinkSelected == true {
+                if options.isDrinkSelected == true {
                     GridSectionView(title: "Drink")
                 }
-                if isDessertSelected == true {
+                if options.isDessertSelected == true {
                     GridSectionView(title: "Dessert")
                 }
             }
@@ -32,7 +36,7 @@ struct MenuItemsView: View {
             })
         }
         .sheet(isPresented: $isOptionsViewShown, content: {
-            MenuItemsOptionView(isFoodSelected: $isFoodSelected, isDrinkSelected: $isDrinkSelected, isDessertSelected: $isDessertSelected)
+            MenuItemsOptionView(options: $options)
         })
     }
 }
