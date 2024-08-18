@@ -1,12 +1,8 @@
 import SwiftUI
 
-struct Options {
-    var isFoodSelected = true
-    var isDrinkSelected = true
-    var isDessertSelected = true
-}
-
 struct MenuItemsView: View {
+    @Environment(MenuViewViewModel.self) var menuVM
+    
     @State private var isOptionsViewShown = false
     @State private var options = Options()
    
@@ -14,13 +10,13 @@ struct MenuItemsView: View {
         NavigationStack {
             ScrollView {
                 if options.isFoodSelected == true {
-                    GridSectionView(title: "Food")
+                    GridSectionView(title: "Food", menuItems: menuVM.foodMenuItem)
                 }
                 if options.isDrinkSelected == true {
-                    GridSectionView(title: "Drink")
+                    GridSectionView(title: "Drink", menuItems: menuVM.drinkMenuItem)
                 }
                 if options.isDessertSelected == true {
-                    GridSectionView(title: "Dessert")
+                    GridSectionView(title: "Dessert", menuItems: menuVM.dessertMenuItem)
                 }
             }
             .padding()

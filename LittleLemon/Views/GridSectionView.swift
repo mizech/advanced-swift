@@ -2,6 +2,7 @@ import SwiftUI
 
 struct GridSectionView: View {
     var title: String
+    var menuItems: [MenuItem]
     
     var body: some View {
         let layout = [
@@ -13,11 +14,11 @@ struct GridSectionView: View {
         VStack(alignment: .leading) {
             Text(title).font(.title)
             LazyVGrid(columns: layout, content: {
-                ForEach(0..<12) { num in
+                ForEach(menuItems) { item in
                     VStack {
                         Rectangle()
                             .frame(height: 70)
-                        Text("Number \(num)")
+                        Text(item.title)
                     }
                     
                 }
@@ -27,5 +28,5 @@ struct GridSectionView: View {
 }
 
 #Preview {
-    GridSectionView(title: "Some title here ...")
+    GridSectionView(title: "Some title here ...", menuItems: [])
 }
