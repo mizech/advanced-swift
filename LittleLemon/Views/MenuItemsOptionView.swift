@@ -3,6 +3,10 @@ import SwiftUI
 struct MenuItemsOptionView: View {
     @Environment(\.dismiss) private var dismiss
     
+    @Binding var isFoodSelected: Bool
+    @Binding var isDrinkSelected: Bool
+    @Binding var isDessertSelected: Bool
+    
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
@@ -15,9 +19,9 @@ struct MenuItemsOptionView: View {
                 .font(.title)
             Form {
                 Section {
-                    Text(MenuCategory.food.rawValue)
-                    Text(MenuCategory.drink.rawValue)
-                    Text(MenuCategory.dessert.rawValue)
+                    Toggle(MenuCategory.food.rawValue, isOn: $isFoodSelected)
+                    Toggle(MenuCategory.drink.rawValue, isOn: $isDrinkSelected)
+                    Toggle(MenuCategory.dessert.rawValue, isOn: $isDessertSelected)
                 } header: {
                     Text("Selected Categories"
                         .uppercased())
@@ -35,5 +39,5 @@ struct MenuItemsOptionView: View {
 }
 
 #Preview {
-    MenuItemsOptionView()
+    MenuItemsOptionView(isFoodSelected: .constant(true), isDrinkSelected: .constant(true), isDessertSelected: .constant(true))
 }
