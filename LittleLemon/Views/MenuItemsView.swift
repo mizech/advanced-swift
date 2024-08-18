@@ -1,6 +1,8 @@
 import SwiftUI
 
 struct MenuItemsView: View {
+    @State private var isOptionsViewShown = false
+    
     var body: some View {
         NavigationStack {
             ScrollView {
@@ -10,7 +12,20 @@ struct MenuItemsView: View {
             }
             .padding()
             .navigationTitle("Menu")
+            .toolbar(content: {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button(action: {
+                        isOptionsViewShown.toggle()
+                    }, label: {
+                        Label("Show Options", systemImage: "list.bullet.circle.fill")
+                    })
+                }
+            })
         }
+        
+        .sheet(isPresented: $isOptionsViewShown, content: {
+            MenuItemsOptionView()
+        })
     }
 }
 

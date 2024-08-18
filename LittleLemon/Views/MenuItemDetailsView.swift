@@ -1,10 +1,3 @@
-//
-//  MenuItemDetailsView.swift
-//  LittleLemon
-//
-//  Created by Michael on 17.08.24.
-//
-
 import SwiftUI
 
 struct MenuItemDetailsView: View {
