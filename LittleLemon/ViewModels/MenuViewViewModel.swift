@@ -10,13 +10,17 @@ class MenuViewViewModel {
         for i in 0..<12 {
             self.foodMenuItem.append(
                 MenuItem(
+                    price: 20.0,
+                    menuCategory: MenuCategory.food,
+                    ordersCount: 0,
+                    iPrice: 20,
                     title: "FoodItem_\(i)",
                     ingredients: [
-                        Ingredient.spinach,
                         Ingredient.broccoli,
                         Ingredient.carrot,
-                        Ingredient.tomatoSauce,
-                        Ingredient.pasta
+                        Ingredient.pasta,
+                        Ingredient.spinach,
+                        Ingredient.tomatoSauce
                     ]
                 )
             )
@@ -24,6 +28,10 @@ class MenuViewViewModel {
         for i in 0..<8 {
             self.drinkMenuItem.append(
                 MenuItem(
+                    price: 10.0,
+                    menuCategory: MenuCategory.drink,
+                    ordersCount: 0,
+                    iPrice: 10,
                     title: "DrinkItem_\(i)",
                     ingredients: []
                 )
@@ -32,6 +40,10 @@ class MenuViewViewModel {
         for i in 0..<4 {
             self.dessertMenuItem.append(
                 MenuItem(
+                    price: 5.0,
+                    menuCategory: MenuCategory.dessert,
+                    ordersCount: 0,
+                    iPrice: 5,
                     title: "DessertItem_\(i)",
                     ingredients: []
                 )

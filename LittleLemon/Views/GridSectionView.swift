@@ -15,12 +15,15 @@ struct GridSectionView: View {
             Text(title).font(.title)
             LazyVGrid(columns: layout, content: {
                 ForEach(menuItems) { item in
-                    VStack {
-                        Rectangle()
-                            .frame(height: 70)
-                        Text(item.title)
+                    NavigationLink {
+                        MenuItemDetailsView(menuItem: item)
+                    } label: {
+                        VStack {
+                            Rectangle()
+                                .frame(height: 70)
+                            Text(item.title)
+                        }.foregroundStyle(.black)
                     }
-                    
                 }
             })
         }

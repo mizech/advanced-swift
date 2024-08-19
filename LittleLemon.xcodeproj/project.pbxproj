@@ -19,6 +19,7 @@
 		4CC12A112C71CD5200B01712 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC12A102C71CD5200B01712 /* MenuItem.swift */; };
 		4CC12A142C71CE2E00B01712 /* MenuViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC12A132C71CE2E00B01712 /* MenuViewViewModel.swift */; };
 		4CC12A162C71D1AE00B01712 /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC12A152C71D1AE00B01712 /* Options.swift */; };
+		4CE278BD2C73082B0004F0B3 /* MenuItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE278BC2C73082B0004F0B3 /* MenuItemProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		4CC12A102C71CD5200B01712 /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
 		4CC12A132C71CE2E00B01712 /* MenuViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewViewModel.swift; sourceTree = "<group>"; };
 		4CC12A152C71D1AE00B01712 /* Options.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Options.swift; sourceTree = "<group>"; };
+		4CE278BC2C73082B0004F0B3 /* MenuItemProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				4CC12A0C2C71C45900B01712 /* MenuCategory.swift */,
 				4CC12A0E2C71C46700B01712 /* Ingredient.swift */,
 				4CC12A102C71CD5200B01712 /* MenuItem.swift */,
+				4CE278BC2C73082B0004F0B3 /* MenuItemProtocol.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -185,6 +188,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CE278BD2C73082B0004F0B3 /* MenuItemProtocol.swift in Sources */,
 				4C0463BE2C7099BD003ABDAD /* MenuItemsOptionView.swift in Sources */,
 				4C0463C02C7099CF003ABDAD /* MenuItemDetailsView.swift in Sources */,
 				4CC12A0F2C71C46700B01712 /* Ingredient.swift in Sources */,
